@@ -65,12 +65,15 @@ header {
 	background: linear-gradient(to top, rgb(172, 245, 245), rgb(15, 253, 174));
 }
 
-.moneyWrapper {
+.moneyWrapper,
+.storeTitleWrapper {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 }
-.title {
+.title,
+.cps,
+.storeTitle {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -86,4 +89,19 @@ header {
 
 main section {
 	border: 2px solid rgb(13, 186, 255);
+}
+
+.item {
+	border: 2px solid rgb(13, 186, 255);
+	width: 80%;
+	background-color: rgb(244, 255, 188);
+	display: flex;
+	flex-wrap: wrap;
+}
+.item * {
+	color: black;
+}
+
+img {
+	height: 100px;
 }
