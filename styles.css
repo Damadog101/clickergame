@@ -15,6 +15,7 @@ body {
 	border: 2px solid rgb(29, 71, 149);
 	height: 400px;
 	width: 400px;
+	cursor: pointer;
 }
 .title::before {
 	content: "Money: ";
