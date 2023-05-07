@@ -5,7 +5,7 @@ let yoshiButton = document.getElementById("buyYoshi");
 let cpsBox = document.getElementById("cpsBox");
 
 let score = 0;
-let cps = 10;
+let cps = 0;
 
 function playSound(sound) {
 	let soundPlayed = new Audio(sound);
@@ -19,19 +19,21 @@ clickBox.addEventListener("click", () => {
 });
 
 yoshiButton.addEventListener("click", () => {
-	cps += 10;
-	score -= 20;
-
-	displayScore.innerHTML = `${score} ${coins}`;
-	cpsBox.innerHTML = `${cps} ${coins}`;
+	if (score < 20) {
+		console.log("not enough money");
+	} else {
+		cps += 10;
+		score -= 20;
+		displayScore.innerHTML = `${score} ${coins}`;
+		cpsBox.innerHTML = `${cps} ${coins}`;
+	}
 });
-
-window.addEventListener("load", () => {
-	setInterval(() => {
-		if ((cps = 0)) {
-			return;
-		} else {
-			score += cps;
-		}
-	}, 1000);
-});
+// window.addEventListener("load", () => {
+// 	setInterval(() => {
+// 		if ((cps = 0)) {
+// 			console.log("cps is 0");
+// 		} else {
+// 			score += cps;
+// 		}
+// 	}, 1000);
+// });
