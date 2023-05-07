@@ -28,12 +28,11 @@ yoshiButton.addEventListener("click", () => {
 		cpsBox.innerHTML = `${cps} ${coins}`;
 	}
 });
-// window.addEventListener("load", () => {
-// 	setInterval(() => {
-// 		if ((cps = 0)) {
-// 			console.log("cps is 0");
-// 		} else {
-// 			score += cps;
-// 		}
-// 	}, 1000);
-// });
+
+setInterval(() => {
+	if ((cps = 0)) {
+		console.log("cps is 0");
+	} else {
+		score += cps;
+	}
+}, 1000);
