@@ -34,5 +34,6 @@ setInterval(() => {
 		console.log("cps is 0");
 	} else {
 		score += cps;
+displayScore.innerHTML = `${score} ${coins}`;
 	}
 }, 1000);
