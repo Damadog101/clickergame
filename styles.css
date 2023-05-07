@@ -1,13 +1,14 @@
 * {
 	box-sizing: border-box;
-	background-color: black;
+	/* background-color: rgb(69, 238, 224); */
 	color: white;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 
 body {
 	margin: 0;
 	padding: 0;
+	background: linear-gradient(to right, rgb(183, 255, 167), rgb(184, 184, 248));
 }
 
 .clickHere {
@@ -32,4 +33,27 @@ main {
 }
 main section {
 	width: 50%;
+}
+section {
+	border: 4px solid black;
+}
+i,
+h1 {
+	font-size: 2rem;
+}
+.titleWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0px 2%;
+}
+.character {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.gameWrapper {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
