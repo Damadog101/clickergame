@@ -4,10 +4,12 @@ let coins = `<i class="fa-solid fa-coins gold"></i>`;
 let yoshiButton = document.getElementById("buyYoshi");
 let cpsBox = document.getElementById("cpsBox");
 let yoshiAmountBox = document.getElementById("yoshiAmount");
+let yoshiCostBox = document.getElementById("yoshiCostDisplay");
 
 let yoshiAmount = 0;
 let score = 0;
 let cps = 0;
+let yoshiCost = 20;
 
 function playSound(sound) {
 	let soundPlayed = new Audio(sound);
@@ -21,13 +23,15 @@ clickBox.addEventListener("click", () => {
 });
 
 yoshiButton.addEventListener("click", () => {
-	if (score < 20) {
+	if (score < yoshiCost) {
 		console.log("not enough money");
 	} else {
 		cps += 2;
-		score -= 20;
+		score -= yoshiCost;
+		yoshiCost = Math.ceil(yoshiCost * 1.2);
 		yoshiAmount += 1;
 
+		yoshiCostBox.innerHTML = yoshiCost;
 		yoshiAmountBox.innerHTML = yoshiAmount;
 		displayScore.innerHTML = `${score} ${coins}`;
 		cpsBox.innerHTML = `${cps} ${coins}`;
