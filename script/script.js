@@ -102,6 +102,6 @@ setInterval(() => {
 		displayScore.innerHTML = `${score} ${coins}`;
 	}
 	if (score > 1000) {
-		body.style.backgroundColor = "yellow";
+		body.style.backgroundColor = "rgb(246, 243, 212)";
 	}
 }, 1000);
