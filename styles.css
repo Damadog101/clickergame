@@ -65,6 +65,10 @@ header {
 	background: linear-gradient(to top, rgb(172, 245, 245), rgb(15, 253, 174));
 }
 
+.cps::before {
+	content: "CPS:";
+}
+
 .moneyWrapper,
 .storeTitleWrapper {
 	display: flex;

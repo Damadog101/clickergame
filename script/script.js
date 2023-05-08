@@ -3,7 +3,9 @@ let displayScore = document.getElementById("scoreBox");
 let coins = `<i class="fa-solid fa-coins gold"></i>`;
 let yoshiButton = document.getElementById("buyYoshi");
 let cpsBox = document.getElementById("cpsBox");
+let yoshiAmountBox = document.getElementById("yoshiAmount");
 
+let yoshiAmount = 0;
 let score = 0;
 let cps = 0;
 
@@ -22,18 +24,21 @@ yoshiButton.addEventListener("click", () => {
 	if (score < 20) {
 		console.log("not enough money");
 	} else {
-		cps += 10;
+		cps += 2;
 		score -= 20;
+		yoshiAmount += 1;
+
+		yoshiAmountBox.innerHTML = yoshiAmount;
 		displayScore.innerHTML = `${score} ${coins}`;
 		cpsBox.innerHTML = `${cps} ${coins}`;
 	}
 });
 
 setInterval(() => {
-	if ((cps = 0)) {
+	if (cps == 0) {
 		console.log("cps is 0");
 	} else {
 		score += cps;
-displayScore.innerHTML = `${score} ${coins}`;
+		displayScore.innerHTML = `${score} ${coins}`;
 	}
 }, 1000);
