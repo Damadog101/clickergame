@@ -16,7 +16,13 @@ let steveButton = document.getElementById("buySteve");
 let steveAmountBox = document.getElementById("steveAmount");
 let steveCostBox = document.getElementById("steveCostDisplay");
 let steveAmount = 0;
-let steveCost = 20;
+let steveCost = 50;
+
+let flintButton = document.getElementById("buyFlint");
+let flintAmountBox = document.getElementById("flintAmount");
+let flintCostBox = document.getElementById("flintCostDisplay");
+let flintAmount = 0;
+let flintCost = 35;
 
 let score = 0;
 let cps = 0;
@@ -57,6 +63,7 @@ yoshiButton.addEventListener("click", () => {
 steveButton.addEventListener("click", () => {
 	if (score < steveCost) {
 		console.log("not enough money");
+		playSound("/sound/error.mp3");
 	} else {
 		cps += 15;
 		score -= steveCost;
@@ -65,6 +72,24 @@ steveButton.addEventListener("click", () => {
 
 		steveCostBox.innerHTML = steveCost;
 		steveAmountBox.innerHTML = steveAmount;
+		displayScore.innerHTML = `${score} ${coins}`;
+		cpsBox.innerHTML = `${cps} ${coins}`;
+		playSound("/sound/itemGet.mp3");
+	}
+});
+
+flintButton.addEventListener("click", () => {
+	if (score < flintCost) {
+		console.log("not enough money");
+		playSound("/sound/error.mp3");
+	} else {
+		cps += 10;
+		score -= flintCost;
+		flintCost = Math.ceil(flintCost * 1.2);
+		flintAmount += 1;
+
+		flintCostBox.innerHTML = flintCost;
+		flintAmountBox.innerHTML = flintAmount;
 		displayScore.innerHTML = `${score} ${coins}`;
 		cpsBox.innerHTML = `${cps} ${coins}`;
 		playSound("/sound/itemGet.mp3");
