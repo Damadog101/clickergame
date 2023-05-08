@@ -32,7 +32,7 @@ function playSound(sound) {
 	soundPlayed.play();
 }
 
-clickBox.addEventListener("click", () => {
+function rockClicked() {
 	score += 1;
 	displayScore.innerHTML = `${score} ${coins}`;
 	playSound("/sound/bonk.mp3");
@@ -40,6 +40,16 @@ clickBox.addEventListener("click", () => {
 	setTimeout(() => {
 		pickaxe.style.animation = "";
 	}, 100);
+}
+
+clickBox.addEventListener("click", () => {
+	rockClicked();
+});
+window.addEventListener("keyup", (e) => {
+	switch (e.key) {
+		case " ":
+			rockClicked();
+	}
 });
 
 yoshiButton.addEventListener("click", () => {
