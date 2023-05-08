@@ -56,6 +56,7 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 .gameWrapper {
 	display: flex;
@@ -115,4 +116,18 @@ img {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(3, 1fr);
+}
+.pickaxe {
+	position: absolute;
+	right: 120px;
+	/* animation: pickSpin 1000ms; */
+}
+
+@keyframes pickSpin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-90deg);
+	}
 }

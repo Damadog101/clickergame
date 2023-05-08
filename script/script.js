@@ -4,6 +4,7 @@ let clickBox = document.getElementById("clickHere");
 let displayScore = document.getElementById("scoreBox");
 let coins = `<i class="fa-solid fa-coins gold"></i>`;
 let cpsBox = document.getElementById("cpsBox");
+let pickaxe = document.getElementById("pickaxe");
 
 let yoshiButton = document.getElementById("buyYoshi");
 let yoshiAmountBox = document.getElementById("yoshiAmount");
@@ -29,6 +30,10 @@ clickBox.addEventListener("click", () => {
 	score += 1;
 	displayScore.innerHTML = `${score} ${coins}`;
 	playSound("/sound/bonk.mp3");
+	pickaxe.style.animation = "pickSpin 100ms";
+	setTimeout(() => {
+		pickaxe.style.animation = "";
+	}, 100);
 });
 
 yoshiButton.addEventListener("click", () => {
