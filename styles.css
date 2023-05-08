@@ -120,7 +120,6 @@ img {
 .pickaxe {
 	position: absolute;
 	right: 120px;
-	/* animation: pickSpin 1000ms; */
 }
 
 @keyframes pickSpin {
@@ -129,5 +128,11 @@ img {
 	}
 	to {
 		transform: rotate(-90deg);
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.pickaxe {
+		right: 20px;
 	}
 }
