@@ -1,15 +1,22 @@
 let clickBox = document.getElementById("clickHere");
 let displayScore = document.getElementById("scoreBox");
 let coins = `<i class="fa-solid fa-coins gold"></i>`;
-let yoshiButton = document.getElementById("buyYoshi");
 let cpsBox = document.getElementById("cpsBox");
+
+let yoshiButton = document.getElementById("buyYoshi");
 let yoshiAmountBox = document.getElementById("yoshiAmount");
 let yoshiCostBox = document.getElementById("yoshiCostDisplay");
-
 let yoshiAmount = 0;
+let yoshiCost = 20;
+
+let steveButton = document.getElementById("buySteve");
+let steveAmountBox = document.getElementById("steveAmount");
+let steveCostBox = document.getElementById("steveCostDisplay");
+let steveAmount = 0;
+let steveCost = 20;
+
 let score = 0;
 let cps = 0;
-let yoshiCost = 20;
 
 function playSound(sound) {
 	let soundPlayed = new Audio(sound);
@@ -28,11 +35,27 @@ yoshiButton.addEventListener("click", () => {
 	} else {
 		cps += 2;
 		score -= yoshiCost;
-		yoshiCost = Math.ceil(yoshiCost * 1.2);
+		yoshiCost = yoshiCost + Math.ceil(yoshiCost * 1.2);
 		yoshiAmount += 1;
 
 		yoshiCostBox.innerHTML = yoshiCost;
 		yoshiAmountBox.innerHTML = yoshiAmount;
+		displayScore.innerHTML = `${score} ${coins}`;
+		cpsBox.innerHTML = `${cps} ${coins}`;
+	}
+});
+
+steveButton.addEventListener("click", () => {
+	if (score < steveCost) {
+		console.log("not enough money");
+	} else {
+		cps += 15;
+		score -= steveCost;
+		steveCost = steveCost + Math.ceil(steveCost * 1.2);
+		steveAmount += 1;
+
+		steveCostBox.innerHTML = steveCost;
+		steveAmountBox.innerHTML = steveAmount;
 		displayScore.innerHTML = `${score} ${coins}`;
 		cpsBox.innerHTML = `${cps} ${coins}`;
 	}
