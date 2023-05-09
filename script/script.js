@@ -16,13 +16,19 @@ let steveButton = document.getElementById("buySteve");
 let steveAmountBox = document.getElementById("steveAmount");
 let steveCostBox = document.getElementById("steveCostDisplay");
 let steveAmount = 0;
-let steveCost = 50;
+let steveCost = 1800;
 
 let flintButton = document.getElementById("buyFlint");
 let flintAmountBox = document.getElementById("flintAmount");
 let flintCostBox = document.getElementById("flintCostDisplay");
 let flintAmount = 0;
-let flintCost = 35;
+let flintCost = 400;
+
+let buffDogeButton = document.getElementById("buyBuffDoge");
+let buffDogeAmountBox = document.getElementById("buffDogeAmount");
+let buffDogeCostBox = document.getElementById("buffDogeCostDisplay");
+let buffDogeAmount = 0;
+let buffDogeCost = 50000;
 
 let score = 0;
 let cps = 0;
@@ -34,7 +40,7 @@ function playSound(sound) {
 
 function rockClicked() {
 	score += 1;
-	displayScore.innerHTML = `${score} ${coins}`;
+	displayScore.innerHTML = `${score.toFixed(2)} ${coins}`;
 	playSound("/sound/bonk.mp3");
 	pickaxe.style.animation = "pickSpin 100ms";
 	setTimeout(() => {
@@ -57,15 +63,33 @@ yoshiButton.addEventListener("click", () => {
 		console.log("not enough money");
 		playSound("/sound/error.mp3");
 	} else {
-		cps += 2;
+		cps += 0.2;
 		score -= yoshiCost;
-		yoshiCost = Math.ceil(yoshiCost * 1.2);
+		yoshiCost = Math.ceil(yoshiCost * 1.15);
 		yoshiAmount += 1;
 
 		yoshiCostBox.innerHTML = yoshiCost;
 		yoshiAmountBox.innerHTML = yoshiAmount;
-		displayScore.innerHTML = `${score} ${coins}`;
-		cpsBox.innerHTML = `${cps} ${coins}`;
+		displayScore.innerHTML = `${score.toFixed(2)} ${coins}`;
+		cpsBox.innerHTML = `${cps.toFixed(2)} ${coins}`;
+		playSound("/sound/itemGet.mp3");
+	}
+});
+
+buffDogeButton.addEventListener("click", () => {
+	if (score < buffDogeCost) {
+		console.log("not enough money");
+		playSound("/sound/error.mp3");
+	} else {
+		cps += 9;
+		score -= buffDogeCost;
+		buffDogeCost = Math.ceil(buffDogeCost * 1.15);
+		buffDogeAmount += 1;
+
+		buffDogeCostBox.innerHTML = buffDogeCost;
+		buffDogeAmountBox.innerHTML = buffDogeAmount;
+		displayScore.innerHTML = `${score.toFixed(2)} ${coins}`;
+		cpsBox.innerHTML = `${cps.toFixed(2)} ${coins}`;
 		playSound("/sound/itemGet.mp3");
 	}
 });
@@ -75,15 +99,15 @@ steveButton.addEventListener("click", () => {
 		console.log("not enough money");
 		playSound("/sound/error.mp3");
 	} else {
-		cps += 15;
+		cps += 4;
 		score -= steveCost;
-		steveCost = Math.ceil(steveCost * 1.2);
+		steveCost = Math.ceil(steveCost * 1.15);
 		steveAmount += 1;
 
 		steveCostBox.innerHTML = steveCost;
 		steveAmountBox.innerHTML = steveAmount;
-		displayScore.innerHTML = `${score} ${coins}`;
-		cpsBox.innerHTML = `${cps} ${coins}`;
+		displayScore.innerHTML = `${score.toFixed(2)} ${coins}`;
+		cpsBox.innerHTML = `${cps.toFixed(2)} ${coins}`;
 		playSound("/sound/itemGet.mp3");
 	}
 });
@@ -93,15 +117,15 @@ flintButton.addEventListener("click", () => {
 		console.log("not enough money");
 		playSound("/sound/error.mp3");
 	} else {
-		cps += 10;
+		cps += 2;
 		score -= flintCost;
-		flintCost = Math.ceil(flintCost * 1.2);
+		flintCost = Math.ceil(flintCost * 1.15);
 		flintAmount += 1;
 
 		flintCostBox.innerHTML = flintCost;
 		flintAmountBox.innerHTML = flintAmount;
-		displayScore.innerHTML = `${score} ${coins}`;
-		cpsBox.innerHTML = `${cps} ${coins}`;
+		displayScore.innerHTML = `${score.toFixed(2)} ${coins}`;
+		cpsBox.innerHTML = `${cps.toFixed(2)} ${coins}`;
 		playSound("/sound/itemGet.mp3");
 	}
 });
@@ -109,7 +133,7 @@ flintButton.addEventListener("click", () => {
 setInterval(() => {
 	if (cps != 0) {
 		score += cps;
-		displayScore.innerHTML = `${score} ${coins}`;
+		displayScore.innerHTML = `${score.toFixed(2)} ${coins}`;
 	}
 	if (score > 1000) {
 		body.style.backgroundColor = "rgb(246, 243, 212)";
