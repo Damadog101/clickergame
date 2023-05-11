@@ -99,7 +99,7 @@ main section {
 
 .item {
 	border: 2px solid rgb(13, 186, 255);
-	width: 80%;
+	width: 50%;
 	background-color: rgb(244, 255, 188);
 	display: flex;
 	flex-wrap: wrap;
@@ -117,6 +117,10 @@ img {
 	flex-wrap: wrap;
 }
 
+h2 {
+	width: 100%;
+}
+
 .store.helpers {
 	display: flex;
 	flex-wrap: wrap;
@@ -126,6 +130,18 @@ img {
 	position: absolute;
 	right: 120px;
 }
+
+.store section {
+	width: 100%;
+}
+
+.helpers {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+
 
 @keyframes pickSpin {
 	from {
@@ -140,9 +156,7 @@ img {
 	.pickaxe {
 		right: 20px;
 	}
-	.store section {
-		width: 100%;
-	}
+
 	main section {
 		width: 100%;
 	}
