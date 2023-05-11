@@ -140,4 +140,10 @@ img {
 	.pickaxe {
 		right: 20px;
 	}
+	.store section {
+		width: 100%;
+	}
+	main section {
+		width: 100%;
+	}
 }
