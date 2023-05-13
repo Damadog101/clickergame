@@ -1,179 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css" />
-    <script src="/script/script.js" defer></script>
-    <title>Document</title>
-    <link rel="icon" href="/images/dogemine.png" />
-    <script
-      src="https://kit.fontawesome.com/c0c26e9f21.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body id="body">
-    <header>
-      <section>
-        <div class="titleWrapper">
-          <h1>Not Dogeminer</h1>
-          <i class="fa-solid fa-gear"></i>
-        </div>
-      </section>
-    </header>
-    <main>
-      <section class="gameSection">
-        <div class="moneyWrapper">
-          <h2 class="title" id="scoreBox">
-            0.00<i class="fa-solid fa-coins gold"></i>
-          </h2>
-          <h2 class="cps" id="cpsBox">
-            0.00<i class="fa-solid fa-coins gold"></i>
-          </h2>
-        </div>
-        <div class="gameWrapper">
-          <div class="clickHere" id="clickHere"></div>
-          <div class="character" id="character">
-            <img src="/images/doge.jpg" alt="" />
-            <img
-              class="pickaxe"
-              id="pickaxe"
-              src="/images/pickaxe.png"
-              alt=""
-            />
-          </div>
-        </div>
-      </section>
-      <section class="storeSection">
-        <div class="storeTitleWrapper">
-          <h2 class="storeTitle">Store</h2>
-        </div>
-        <div class="store">
-          <section class="helpers">
-            <h2>Helpers</h2>
-            <div class="item">
-              <div class="itemImage">
-                <img class="img" src="/images/yoshi.webp" alt="" />
-              </div>
-              <div class="itemText">
-                <ul>
-                  <li>Yoshi</li>
-                  <li>+0.2 cps</li>
-                  <li>$<span id="yoshiCostDisplay">20</span></li>
-                  <li>Amount: <span id="yoshiAmount">0</span></li>
-                </ul>
-              </div>
-              <div class="purchase"><button id="buyYoshi">Buy</button></div>
-            </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/styles.css" />
+		<script src="/script/script.js" defer></script>
+		<title>Document</title>
+		<link rel="icon" href="/images/dogemine.png" />
+		<script
+			src="https://kit.fontawesome.com/c0c26e9f21.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body id="body">
+		<header>
+			<section>
+				<div class="titleWrapper">
+					<h1>Not Dogeminer</h1>
+					<i class="fa-solid fa-gear"></i>
+				</div>
+			</section>
+		</header>
+		<main>
+			<section class="gameSection">
+				<div class="moneyWrapper">
+					<h2 class="title" id="scoreBox">
+						0.00<i class="fa-solid fa-coins gold"></i>
+					</h2>
+					<h2 class="cps" id="cpsBox">
+						0.00<i class="fa-solid fa-coins gold"></i>
+					</h2>
+				</div>
+				<div class="gameWrapper">
+					<div class="clickHere" id="clickHere"></div>
+					<div class="character" id="character">
+						<img src="/images/doge.jpg" alt="" />
+						<img
+							class="pickaxe"
+							id="pickaxe"
+							src="/images/pickaxe.png"
+							alt=""
+						/>
+					</div>
+				</div>
+			</section>
+			<section class="storeSection">
+				<div class="storeTitleWrapper">
+					<h2 class="storeTitle">Store</h2>
+				</div>
+				<div class="store">
+					<section class="helpers">
+						<h2>Helpers</h2>
+						<div class="item">
+							<div class="itemImage">
+								<img class="img" src="/images/yoshi.webp" alt="" />
+							</div>
+							<div class="itemText">
+								<ul>
+									<li>Yoshi</li>
+									<li>+0.2 cps</li>
+									<li>$<span id="yoshiCostDisplay">20</span></li>
+									<li>Amount: <span id="yoshiAmount">0</span></li>
+								</ul>
+							</div>
+							<div class="purchase"><button id="buyYoshi">Buy</button></div>
+						</div>
 
-            <div class="item">
-              <div class="itemImage">
-                <img class="img" src="/images/flint.png" alt="" />
-              </div>
-              <div class="itemText">
-                <ul>
-                  <li>Flint Cragley</li>
-                  <li>+2 cps</li>
-                  <li>$<span id="flintCostDisplay">400</span></li>
-                  <li>Amount: <span id="flintAmount">0</span></li>
-                </ul>
-              </div>
-              <div class="purchase"><button id="buyFlint">Buy</button></div>
-            </div>
-            <div class="item">
-              <div class="itemImage">
-                <img class="img" src="/images/steve.jpg" alt="" />
-              </div>
-              <div class="itemText">
-                <ul>
-                  <li>Steve</li>
-                  <li>+4 cps</li>
-                  <li>$<span id="steveCostDisplay">1800</span></li>
-                  <li>Amount: <span id="steveAmount">0</span></li>
-                </ul>
-              </div>
-              <div class="purchase"><button id="buySteve">Buy</button></div>
-            </div>
-            <div class="item">
-              <div class="itemImage">
-                <img class="img" src="/images/buffDoge.png" alt="" />
-              </div>
-              <div class="itemText">
-                <ul>
-                  <li>Buff Doge</li>
-                  <li>+9 cps</li>
-                  <li>$<span id="buffDogeCostDisplay">50000</span></li>
-                  <li>Amount: <span id="buffDogeAmount">0</span></li>
-                </ul>
-              </div>
-              <div class="purchase"><button id="buyBuffDoge">Buy</button></div>
-            </div>
-            <div class="item">
-              <div class="itemImage">
-                <img class="img" src="/images/ded.png" alt="" />
-              </div>
-              <div class="itemText">
-                <ul>
-                  <li>TBA</li>
-                  <li>+TBA cps</li>
-                  <li>$<span id="yoshiCostDisplay">TBA</span></li>
-                  <li>Amount: <span id="yoshiAmount">0</span></li>
-                </ul>
-              </div>
-              <div class="purchase"><button id="buyYoshi">Buy</button></div>
-            </div>
-            <div class="item">
-              <div class="itemImage">
-                <img class="img" src="/images/ded.png" alt="" />
-              </div>
-              <div class="itemText">
-                <ul>
-                  <li>TBA</li>
-                  <li>+TBA cps</li>
-                  <li>$<span id="yoshiCostDisplay">TBA</span></li>
-                  <li>Amount: <span id="yoshiAmount">0</span></li>
-                </ul>
-              </div>
-              <div class="purchase"><button id="buyYoshi">Buy</button></div>
-            </div>
-          </section>
-          <section class="tools">
-            <h3>Tools/Powerups</h3>
-            <div class="item">
-              <div class="itemImage">
-                <img class="img" src="/images/ded.png" alt="" />
-              </div>
-              <div class="itemText">
-                <ul>
-                  <li>TBA</li>
-                  <li>+TBA cps</li>
-                  <li>$<span id="yoshiCostDisplay">TBA</span></li>
-                  <li>Amount: <span id="yoshiAmount">0</span></li>
-                </ul>
-              </div>
-              <div class="purchase"><button id="buyYoshi">Buy</button></div>
-            </div>
-          </section>
-          <section class="upgrades">
-            <h2>Upgrades</h2>
-            <div class="item">
-              <div class="itemImage">
-                <img class="img" src="/images/ded.png" alt="" />
-              </div>
-              <div class="itemText">
-                <ul>
-                  <li>TBA</li>
-                  <li>+TBA cps</li>
-                  <li>$<span id="yoshiCostDisplay">TBA</span></li>
-                  <li>Amount: <span id="yoshiAmount">0</span></li>
-                </ul>
-              </div>
-              <div class="purchase"><button id="buyYoshi">Buy</button></div>
-            </div>
-          </section>
-        </div>
-      </section>
-    </main>
-  </body>
+						<div class="item">
+							<div class="itemImage">
+								<img class="img" src="/images/flint.png" alt="" />
+							</div>
+							<div class="itemText">
+								<ul>
+									<li>Flint Cragley</li>
+									<li>+2 cps</li>
+									<li>$<span id="flintCostDisplay">400</span></li>
+									<li>Amount: <span id="flintAmount">0</span></li>
+								</ul>
+							</div>
+							<div class="purchase"><button id="buyFlint">Buy</button></div>
+						</div>
+						<div class="item">
+							<div class="itemImage">
+								<img class="img" src="/images/steve.jpg" alt="" />
+							</div>
+							<div class="itemText">
+								<ul>
+									<li>Steve</li>
+									<li>+4 cps</li>
+									<li>$<span id="steveCostDisplay">1800</span></li>
+									<li>Amount: <span id="steveAmount">0</span></li>
+								</ul>
+							</div>
+							<div class="purchase"><button id="buySteve">Buy</button></div>
+						</div>
+						<div class="item">
+							<div class="itemImage">
+								<img class="img" src="/images/buffDoge.png" alt="" />
+							</div>
+							<div class="itemText">
+								<ul>
+									<li>Buff Doge</li>
+									<li>+9 cps</li>
+									<li>$<span id="buffDogeCostDisplay">50000</span></li>
+									<li>Amount: <span id="buffDogeAmount">0</span></li>
+								</ul>
+							</div>
+							<div class="purchase"><button id="buyBuffDoge">Buy</button></div>
+						</div>
+						<div class="item">
+							<div class="itemImage">
+								<img class="img" src="/images/ded.png" alt="" />
+							</div>
+							<div class="itemText">
+								<ul>
+									<li>TBA</li>
+									<li>+TBA cps</li>
+									<li>$<span id="yoshiCostDisplay">TBA</span></li>
+									<li>Amount: <span id="yoshiAmount">0</span></li>
+								</ul>
+							</div>
+							<div class="purchase"><button id="buyYoshi">Buy</button></div>
+						</div>
+						<div class="item">
+							<div class="itemImage">
+								<img class="img" src="/images/ded.png" alt="" />
+							</div>
+							<div class="itemText">
+								<ul>
+									<li>TBA</li>
+									<li>+TBA cps</li>
+									<li>$<span id="yoshiCostDisplay">TBA</span></li>
+									<li>Amount: <span id="yoshiAmount">0</span></li>
+								</ul>
+							</div>
+							<div class="purchase"><button id="buyYoshi">Buy</button></div>
+						</div>
+					</section>
+					<section class="tools">
+						<h3>Tools/Powerups</h3>
+						<div class="item">
+							<div class="itemImage">
+								<img class="img" src="/images/ded.png" alt="" />
+							</div>
+							<div class="itemText">
+								<ul>
+									<li>Bread</li>
+									<li>+10 cpc (20s)</li>
+									<li>$<span id="yoshiCostDisplay">TBA</span></li>
+									<li>Amount: <span id="yoshiAmount">0</span></li>
+								</ul>
+							</div>
+							<div class="purchase"><button id="buyYoshi">Buy</button></div>
+						</div>
+					</section>
+					<section class="upgrades">
+						<h2>Upgrades</h2>
+						<div class="item">
+							<div class="itemImage">
+								<img class="img" src="/images/ded.png" alt="" />
+							</div>
+							<div class="itemText">
+								<ul>
+									<li>TBA</li>
+									<li>+TBA cps</li>
+									<li>$<span id="yoshiCostDisplay">TBA</span></li>
+									<li>Amount: <span id="yoshiAmount">0</span></li>
+								</ul>
+							</div>
+							<div class="purchase"><button id="buyYoshi">Buy</button></div>
+						</div>
+					</section>
+				</div>
+			</section>
+		</main>
+	</body>
 </html>
